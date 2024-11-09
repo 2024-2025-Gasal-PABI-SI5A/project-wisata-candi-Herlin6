@@ -8,11 +8,43 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         body: Column(
       children: [
         Stack(
-          children: [],
+          children: [
+            //DETAIL HEADER
+            //image utama
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(candi.imageAsset,
+                      width: double.infinity, height: 300, fit: BoxFit.cover),
+                )),
+            //tombol back costume
+            Padding(
+                padding: const EdgeInsets.all(16),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple[100]?.withOpacity(0.8),
+                    shape: BoxShape.circle,
+                  ),
+                  child: IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.arrow_back)),
+                ))
+          ],
+        ),
+        //DETAIL INFO
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            children: [
+              //info atas
+              //info tengah
+              //info bawah
+            ],
+          ),
         )
       ],
     ));
