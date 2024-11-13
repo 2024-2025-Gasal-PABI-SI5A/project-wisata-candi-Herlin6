@@ -8,7 +8,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  bool isSigendIn = true;
+  bool isSignedIn = true;
   String fullName = "Herlin Dwi Vitaloka";
   String userName = "Herlin";
   int favoriteCandiCount = 0;
@@ -16,14 +16,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
   //sign in funciton
   void SignIn() {
     setState(() {
-      isSigendIn = !isSigendIn;
+      isSignedIn = !isSignedIn;
     });
   }
 
   //sign out function
   void SignOut() {
     setState(() {
-      isSigendIn = !isSigendIn;
+      isSignedIn = !isSignedIn;
     });
   }
 
@@ -59,7 +59,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   AssetImage("images/placeholder_image.png"),
                             ),
                           ),
-                          if (isSigendIn)
+                          if (isSignedIn)
                             IconButton(
                                 onPressed: () {},
                                 icon: Icon(
@@ -139,7 +139,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ": $fullName",
                         style: const TextStyle(fontSize: 18),
                       )),
-                      if (isSigendIn) const Icon(Icons.edit)
+                      if (isSignedIn) const Icon(Icons.edit)
                     ],
                   ),
                   // Baris 3 favorite info
@@ -187,7 +187,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  isSigendIn
+                  isSignedIn
                       ? TextButton(
                           onPressed: SignOut, child: const Text("Sign Out"))
                       : TextButton(
